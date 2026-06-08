@@ -22,7 +22,7 @@ resource "docker_container" "nginx_server" {
   image = docker_image.nginx.image_id
   ports {
     internal = 80
-    external = 8080
+    external = 8088
   }
 
   # DEFINED AS BLOCKS (No equals sign)
@@ -43,6 +43,7 @@ resource "docker_container" "nginx_server" {
 }
 
 output "access_url" {
-  value       = "http://localhost:8080"
+  value       = "http://localhost:8088"
   description = "The local URL to access your deployed Nginx application"
 }
+
